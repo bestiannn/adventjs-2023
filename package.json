@@ -1,0 +1,13 @@
+{
+  "name": "adventjs-2023",
+  "version": "1.0.0",
+  "description": "Códigos en JS realizados para resolver los retos del adventJS 2023.",
+  "main": "index.js",
+  "scripts": {
+    "day-01": "node day-01/index.js",
+    "day-02": "node day-02/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,21 +1,20 @@
-function manufacture(gifts, materials) {
-    return gifts.filter(gift => gift.split('').every(letter => materials.includes(letter)))
+function findNaughtyStep(original, modified) {
+    for (let i = 0; i < modified.length; i++) {
+        if (modified[i] !== original[i]) {
+            return original.length > modified.length ? original[i] : modified[i]
+        }
+    }
+    return ""
 }
 
-gifts = ['tren', 'oso', 'pelota']
-materials = 'tronesa'
+original = 'abcd'
+modified = 'abcde'
+findNaughtyStep(original, modified) // 'e'
 
-console.log(manufacture(gifts, materials)) // ["tren", "oso"]
-// 'tren' SÍ porque sus letras están en 'tronesa'
-// 'oso' SÍ porque sus letras están en 'tronesa'
-// 'pelota' NO porque sus letras NO están en 'tronesa'
+original = 'stepfor'
+modified = 'stepor'
+findNaughtyStep(original, modified) // 'f'
 
-gifts = ['juego', 'puzzle']
-materials = 'jlepuz'
-
-console.log(manufacture(gifts, materials)) // ["puzzle"]
-
-gifts = ['libro', 'ps5']
-materials = 'psli'
-
-console.log(manufacture(gifts, materials)) // []
+original = 'abcde'
+modified = 'abcde'
+findNaughtyStep(original, modified) // ''
